@@ -1,0 +1,22 @@
+{
+  "name": "aicostguard-monorepo",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "pnpm@10.0.0",
+  "scripts": {
+    "dev": "concurrently -n web,api -c cyan,green \"pnpm --filter @aicostguard/web dev\" \"pnpm --filter @aicostguard/api dev\"",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm --filter @aicostguard/api test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@typescript-eslint/eslint-plugin": "^8.23.0",
+    "@typescript-eslint/parser": "^8.23.0",
+    "concurrently": "^9.1.2",
+    "eslint": "^8.57.1",
+    "eslint-plugin-react-hooks": "^5.1.0",
+    "typescript": "^5.7.3"
+  }
+}

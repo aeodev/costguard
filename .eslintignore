@@ -1,0 +1,5 @@
+**/dist
+**/node_modules
+web/vite.config.ts
+web/vite.config.js
+web/vite.config.d.ts

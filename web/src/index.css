@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --slate-50: 248 250 252;
+  --slate-100: 241 245 249;
+  --slate-200: 226 232 240;
+  --slate-300: 203 213 225;
+  --slate-400: 148 163 184;
+  --slate-500: 100 116 139;
+  --slate-600: 71 85 105;
+  --slate-700: 51 65 85;
+  --slate-800: 30 41 59;
+  --slate-900: 15 23 42;
+  --slate-950: 2 6 23;
+  --bg: var(--slate-950);
+  --fg: var(--slate-100);
+}
+
+:root.light {
+  color-scheme: light;
+  --slate-50: 2 6 23;
+  --slate-100: 15 23 42;
+  --slate-200: 30 41 59;
+  --slate-300: 51 65 85;
+  --slate-400: 71 85 105;
+  --slate-500: 100 116 139;
+  --slate-600: 148 163 184;
+  --slate-700: 203 213 225;
+  --slate-800: 226 232 240;
+  --slate-900: 241 245 249;
+  --slate-950: 248 250 252;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(16, 185, 129, 0.15), transparent 45%),
+    radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 40%),
+    rgb(var(--bg));
+  color: rgb(var(--fg));
+}

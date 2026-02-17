@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CostGuard</title>
+    <meta
+      name="description"
+      content="CostGuard helps finance and security teams govern AI subscriptions, spend, and risk."
+    />
+    <script>
+      (function () {
+        try {
+          var k = 'aicostguard_theme';
+          var t = localStorage.getItem(k);
+          if (t === 'light' || t === 'dark') {
+            document.documentElement.classList.add(t);
+            return;
+          }
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            document.documentElement.classList.add('light');
+            return;
+          }
+        } catch (e) {
+          /* ignore */
+        }
+        document.documentElement.classList.add('dark');
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
