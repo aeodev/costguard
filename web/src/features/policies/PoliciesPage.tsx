@@ -147,7 +147,7 @@ export const PoliciesPage = () => {
                 {tools.map((tool) => (
                   <label
                     key={tool.id}
-                    className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/40 px-3 py-2 text-sm"
+                    className="flex items-center justify-between rounded-lg bg-slate-950/40 px-3 py-2 text-sm shadow-soft "
                   >
                     <span>{tool.name}</span>
                     <input
@@ -162,7 +162,7 @@ export const PoliciesPage = () => {
             </div>
 
             <div className="grid gap-3 sm:grid-cols-3">
-              <label className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/40 px-3 py-2 text-sm">
+              <label className="flex items-center justify-between rounded-lg bg-slate-950/40 px-3 py-2 text-sm shadow-soft ">
                 Require SSO
                 <input
                   type="checkbox"
@@ -171,7 +171,7 @@ export const PoliciesPage = () => {
                   className="h-4 w-4 accent-emerald-400"
                 />
               </label>
-              <label className="flex items-center justify-between rounded-lg border border-slate-800 bg-slate-950/40 px-3 py-2 text-sm">
+              <label className="flex items-center justify-between rounded-lg bg-slate-950/40 px-3 py-2 text-sm shadow-soft ">
                 Ban personal accounts
                 <input
                   type="checkbox"
@@ -180,7 +180,7 @@ export const PoliciesPage = () => {
                   className="h-4 w-4 accent-emerald-400"
                 />
               </label>
-              <div className="rounded-lg border border-slate-800 bg-slate-950/40 px-3 py-2">
+              <div className="rounded-lg bg-slate-950/40 px-3 py-2 shadow-soft ">
                 <label className="mb-1 block text-xs uppercase tracking-wide text-slate-500">Monthly spend cap</label>
                 <Input value={monthlySpendCap} onChange={(event) => setMonthlySpendCap(event.target.value)} />
               </div>

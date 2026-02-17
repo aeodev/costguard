@@ -19,10 +19,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        slate: slateScale
+        slate: slateScale,
+        surface: {
+          base: 'rgb(var(--bg-base) / <alpha-value>)',
+          elev: 'rgb(var(--bg-elev) / <alpha-value>)',
+          soft: 'rgb(var(--bg-soft) / <alpha-value>)',
+          line: 'rgb(var(--line) / <alpha-value>)'
+        },
+        brand: {
+          DEFAULT: 'rgb(var(--brand) / <alpha-value>)',
+          strong: 'rgb(var(--brand-strong) / <alpha-value>)'
+        }
       },
       boxShadow: {
-        panel: '0 10px 30px rgba(0, 0, 0, 0.25)'
+        soft: 'var(--shadow-soft)',
+        panel: 'var(--shadow-panel)',
+        floating: 'var(--shadow-floating)'
       }
     }
   },

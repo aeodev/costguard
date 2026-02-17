@@ -108,7 +108,7 @@ export const AnalyticsPage = () => {
               <XAxis dataKey="date" tick={{ fill: '#94a3b8', fontSize: 12 }} />
               <YAxis tick={{ fill: '#94a3b8', fontSize: 12 }} />
               <Tooltip
-                contentStyle={{ background: '#0f172a', border: '1px solid #334155' }}
+                contentStyle={{ background: 'rgba(15, 23, 42, 0.96)', border: '0', borderRadius: '12px', boxShadow: '0 16px 30px rgba(2, 6, 23, 0.42)' }}
                 formatter={(value: number) => formatCurrency(value)}
               />
               <Line type="monotone" dataKey="amount" stroke="#22d3ee" strokeWidth={2} dot={false} />
@@ -127,7 +127,7 @@ export const AnalyticsPage = () => {
                 <XAxis type="number" tick={{ fill: '#94a3b8', fontSize: 12 }} />
                 <YAxis type="category" dataKey="toolName" tick={{ fill: '#94a3b8', fontSize: 12 }} width={120} />
                 <Tooltip
-                  contentStyle={{ background: '#0f172a', border: '1px solid #334155' }}
+                  contentStyle={{ background: 'rgba(15, 23, 42, 0.96)', border: '0', borderRadius: '12px', boxShadow: '0 16px 30px rgba(2, 6, 23, 0.42)' }}
                   formatter={(value: number) => formatCurrency(value)}
                 />
                 <Bar dataKey="amount" fill="#34d399" radius={[4, 4, 4, 4]} />
@@ -147,7 +147,7 @@ export const AnalyticsPage = () => {
                   ))}
                 </Pie>
                 <Tooltip
-                  contentStyle={{ background: '#0f172a', border: '1px solid #334155' }}
+                  contentStyle={{ background: 'rgba(15, 23, 42, 0.96)', border: '0', borderRadius: '12px', boxShadow: '0 16px 30px rgba(2, 6, 23, 0.42)' }}
                   formatter={(value: number) => formatCurrency(value)}
                 />
               </PieChart>

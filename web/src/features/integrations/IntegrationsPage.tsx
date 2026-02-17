@@ -1,6 +1,5 @@
 import type { Integration, IntegrationSyncDiff } from '@aicostguard/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { Link2 } from 'lucide-react';
 import { useState } from 'react';
 import { useToast } from '../../app/providers/toast-provider';
 import { queryKeys } from '../../shared/constants/query-keys';
@@ -80,10 +79,10 @@ export const IntegrationsPage = () => {
             <div className="flex items-start justify-between gap-4">
               <div>
                 <div className="flex items-center gap-2">
-                  <Link2 size={16} className="text-emerald-300" />
+                  <span className="inline-block h-2.5 w-2.5 rounded-full bg-brand" />
                   <h3 className="text-lg font-semibold">{integration.name}</h3>
                 </div>
-                <p className="mt-2 text-sm text-slate-400">{integration.description}</p>
+                <p className="mt-2 text-sm text-slate-300">{integration.description}</p>
               </div>
               <Badge tone={integration.status === 'connected' ? 'success' : 'warning'}>{integration.status}</Badge>
             </div>

@@ -1,26 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   color-scheme: dark;
-  --slate-50: 248 250 252;
-  --slate-100: 241 245 249;
-  --slate-200: 226 232 240;
-  --slate-300: 203 213 225;
-  --slate-400: 148 163 184;
-  --slate-500: 100 116 139;
-  --slate-600: 71 85 105;
-  --slate-700: 51 65 85;
-  --slate-800: 30 41 59;
-  --slate-900: 15 23 42;
-  --slate-950: 2 6 23;
-  --bg: var(--slate-950);
-  --fg: var(--slate-100);
+
+  --slate-50: 245 249 255;
+  --slate-100: 232 240 252;
+  --slate-200: 215 227 244;
+  --slate-300: 189 205 228;
+  --slate-400: 161 180 208;
+  --slate-500: 134 154 186;
+  --slate-600: 110 130 163;
+  --slate-700: 84 102 132;
+  --slate-800: 56 72 98;
+  --slate-900: 31 43 66;
+  --slate-950: 9 14 27;
+
+  --bg-base: 9 14 27;
+  --bg-elev: 17 25 41;
+  --bg-soft: 25 36 58;
+  --text-main: 237 245 255;
+  --text-muted: 149 168 197;
+  --line: 70 88 120;
+
+  --brand: 45 212 191;
+  --brand-strong: 20 184 166;
+  --danger: 251 113 133;
+  --warning: 245 158 11;
+  --info: 56 189 248;
+
+  --shadow-soft: 0 8px 16px rgba(2, 6, 23, 0.2), 0 2px 6px rgba(2, 6, 23, 0.1);
+  --shadow-panel: 0 18px 40px rgba(2, 6, 23, 0.3), 0 4px 14px rgba(15, 23, 42, 0.14);
+  --shadow-floating: 0 30px 80px rgba(2, 6, 23, 0.44), 0 10px 24px rgba(15, 23, 42, 0.2);
 }
 
 :root.light {
   color-scheme: light;
+
   --slate-50: 2 6 23;
   --slate-100: 15 23 42;
   --slate-200: 30 41 59;
@@ -32,13 +51,86 @@
   --slate-800: 226 232 240;
   --slate-900: 241 245 249;
   --slate-950: 248 250 252;
+
+  --bg-base: 245 248 253;
+  --bg-elev: 255 255 255;
+  --bg-soft: 234 240 249;
+  --text-main: 15 23 42;
+  --text-muted: 71 85 105;
+  --line: 187 199 218;
+
+  --brand: 13 148 136;
+  --brand-strong: 15 118 110;
+  --danger: 225 29 72;
+  --warning: 217 119 6;
+  --info: 2 132 199;
+
+  --shadow-soft: 0 3px 8px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-panel: 0 8px 18px rgba(15, 23, 42, 0.1), 0 2px 6px rgba(15, 23, 42, 0.06);
+  --shadow-floating: 0 16px 38px rgba(15, 23, 42, 0.14), 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
 }
 
 body {
-  min-height: 100vh;
+  margin: 0;
+  font-family: 'Public Sans', 'Avenir Next', 'Segoe UI', sans-serif;
+  font-feature-settings: 'cv11', 'ss01';
+  line-height: 1.5;
+  letter-spacing: 0.002em;
   background:
-    radial-gradient(circle at top left, rgba(16, 185, 129, 0.15), transparent 45%),
-    radial-gradient(circle at top right, rgba(14, 165, 233, 0.12), transparent 40%),
-    rgb(var(--bg));
-  color: rgb(var(--fg));
+    radial-gradient(1200px 560px at -12% -10%, rgba(var(--brand) / 0.2), transparent 58%),
+    radial-gradient(980px 500px at 108% -14%, rgba(var(--info) / 0.14), transparent 54%),
+    linear-gradient(180deg, rgba(var(--bg-soft) / 0.32) 0%, rgba(var(--bg-base) / 1) 40%),
+    rgb(var(--bg-base));
+  color: rgb(var(--text-main));
+  text-rendering: optimizeLegibility;
+  position: relative;
+}
+
+:root.light body {
+  background:
+    radial-gradient(920px 420px at -10% -10%, rgba(var(--brand) / 0.08), transparent 60%),
+    radial-gradient(780px 360px at 108% -12%, rgba(var(--info) / 0.06), transparent 58%),
+    linear-gradient(180deg, rgba(var(--bg-base) / 1) 0%, rgba(var(--bg-base) / 1) 100%),
+    rgb(var(--bg-base));
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.34;
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.04) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.62), transparent 88%);
+}
+
+:root.light body::before {
+  opacity: 0.12;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: 'Sora', 'Public Sans', sans-serif;
+  letter-spacing: -0.028em;
+}
+
+::selection {
+  background: rgba(var(--brand) / 0.35);
+  color: rgb(var(--slate-950));
 }

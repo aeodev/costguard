@@ -46,7 +46,7 @@ export const DocsPage = () => {
         <h2 className="text-xl font-semibold">Integration coverage</h2>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {integrations.map((name) => (
-            <div key={name} className="rounded-lg border border-slate-800 bg-slate-950/50 px-3 py-2 text-sm text-slate-300">
+            <div key={name} className="rounded-lg bg-slate-950/50 px-3 py-2 text-sm text-slate-300 shadow-soft">
               {name}
             </div>
           ))}
@@ -56,7 +56,7 @@ export const DocsPage = () => {
       <Card>
         <h2 className="text-xl font-semibold">API quick start</h2>
         <p className="mt-2 text-sm text-slate-400">Authenticate first, then call protected endpoints with the bearer token.</p>
-        <pre className="mt-4 overflow-x-auto rounded-lg border border-slate-800 bg-slate-950/70 p-4 text-xs text-slate-300">
+        <pre className="mt-4 overflow-x-auto rounded-xl bg-slate-950/70 p-4 text-xs text-slate-300 shadow-panel">
 {`curl -X POST http://localhost:4000/auth/login \\
   -H "Content-Type: application/json" \\
   -d '{"email":"admin@aicostguard.dev","password":"password123"}'
@@ -70,7 +70,7 @@ curl http://localhost:4000/org/overview \\
         <h2 className="text-xl font-semibold">Governance deep dives</h2>
         <div className="mt-4 grid gap-3 md:grid-cols-3">
           {blogPosts.map((post) => (
-            <Link key={post.slug} to={`/blog/${post.slug}`} className="rounded-lg border border-slate-800 bg-slate-950/50 p-3 hover:border-emerald-400/40">
+            <Link key={post.slug} to={`/blog/${post.slug}`} className="rounded-lg bg-slate-950/50 p-3 shadow-soft">
               <p className="text-sm font-semibold text-slate-100">{post.title}</p>
               <p className="mt-1 text-xs text-slate-500">{post.readingTime}</p>
             </Link>

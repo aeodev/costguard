@@ -4,7 +4,8 @@ import { cn } from '../lib/cn';
 export const Select = ({ className, ...props }: SelectHTMLAttributes<HTMLSelectElement>) => (
   <select
     className={cn(
-      'w-full rounded-lg border border-slate-700 bg-slate-950/70 px-3 py-2 text-sm text-slate-100 focus:border-emerald-400 focus:outline-none',
+      'h-10 w-full appearance-none rounded-lg bg-surface-soft/70 px-3 text-sm text-slate-100 shadow-soft transition',
+      'focus:outline-none focus:ring-2 focus:ring-brand/45 focus:ring-offset-2 focus:ring-offset-surface-base',
       className
     )}
     {...props}

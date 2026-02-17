@@ -1,13 +1,31 @@
-import { MoonStar, Sun } from 'lucide-react';
+import { cn } from '../lib/cn';
 import { useTheme } from '../../app/providers/theme-provider';
-import { Button } from './button';
 
 export const ThemeToggle = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   return (
-    <Button variant="ghost" onClick={toggleTheme} aria-label="Toggle theme">
-      {theme === 'dark' ? <Sun size={16} /> : <MoonStar size={16} />}
-    </Button>
+    <div className="inline-flex items-center rounded-lg bg-surface-elev/95 p-1 text-xs shadow-soft">
+      <button
+        type="button"
+        onClick={() => setTheme('dark')}
+        className={cn(
+          'rounded-md px-2.5 py-1 transition',
+          theme === 'dark' ? 'bg-surface-soft/85 text-slate-100' : 'text-slate-400 hover:bg-surface-soft/60 hover:text-slate-200'
+        )}
+      >
+        Dark
+      </button>
+      <button
+        type="button"
+        onClick={() => setTheme('light')}
+        className={cn(
+          'rounded-md px-2.5 py-1 transition',
+          theme === 'light' ? 'bg-surface-soft/85 text-slate-100' : 'text-slate-400 hover:bg-surface-soft/60 hover:text-slate-200'
+        )}
+      >
+        Light
+      </button>
+    </div>
   );
 };

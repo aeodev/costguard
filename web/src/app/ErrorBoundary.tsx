@@ -29,7 +29,7 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
     if (this.state.hasError) {
       return (
         <div className="mx-auto max-w-4xl p-6">
-          <Card className="border-rose-500/40">
+          <Card className="bg-rose-500/10">
             <h2 className="text-xl font-semibold text-rose-300">App Route Error</h2>
             <p className="mt-2 text-sm text-slate-300">{this.state.message || 'Unexpected rendering error.'}</p>
             <Button className="mt-4" onClick={this.reset}>

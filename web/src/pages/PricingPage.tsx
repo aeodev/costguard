@@ -117,7 +117,7 @@ export const PricingPage = () => {
 
       <div className="grid gap-4 md:grid-cols-3">
         {tiers.map((tier) => (
-          <Card key={tier.name} className={tier.name === 'Growth' ? 'border-emerald-500/50' : undefined}>
+          <Card key={tier.name} className={tier.name === 'Growth' ? 'bg-gradient-to-b from-emerald-500/10 to-surface-elev/88' : undefined}>
             <p className="text-sm uppercase tracking-wide text-slate-500">{tier.name}</p>
             <p className="mt-3 text-3xl font-semibold">{tier.price}</p>
             <p className="mt-2 text-sm text-slate-400">{tier.blurb}</p>
@@ -138,7 +138,7 @@ export const PricingPage = () => {
         <p className="mt-2 text-sm text-slate-400">All plans include secure authentication, request IDs, and governance event logging.</p>
         <div className="mt-4 overflow-x-auto">
           <table className="min-w-full text-left text-sm">
-            <thead className="border-b border-slate-800 text-xs uppercase tracking-wide text-slate-500">
+            <thead className="text-xs uppercase tracking-wide text-slate-500">
               <tr>
                 <th className="px-3 py-2">Capability</th>
                 <th className="px-3 py-2">Starter</th>
@@ -146,7 +146,7 @@ export const PricingPage = () => {
                 <th className="px-3 py-2">Enterprise</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800">
+            <tbody className="divide-y divide-surface-line/35">
               {compareRows.map((row) => (
                 <tr key={row[0]}>
                   <td className="px-3 py-2 text-slate-200">{row[0]}</td>

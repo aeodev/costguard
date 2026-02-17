@@ -196,7 +196,7 @@ export const RiskPage = () => {
       {selectedFinding ? (
         <div className="fixed inset-0 z-50 flex">
           <div className="flex-1 bg-slate-950/60" onClick={() => setSelectedFinding(null)} />
-          <aside className="h-full w-full max-w-lg overflow-auto border-l border-slate-800 bg-slate-950 p-5">
+          <aside className="h-full w-full max-w-lg overflow-auto bg-slate-950 p-5 shadow-floating">
             <div className="mb-4 flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs uppercase tracking-wide text-slate-500">Risk detail</p>

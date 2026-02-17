@@ -5,5 +5,5 @@ type SkeletonProps = {
 };
 
 export const Skeleton = ({ className }: SkeletonProps) => (
-  <div className={cn('animate-pulse rounded-lg bg-slate-800', className)} />
+  <div className={cn('animate-pulse rounded-xl bg-surface-soft/70', className)} />
 );

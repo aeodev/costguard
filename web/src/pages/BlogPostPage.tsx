@@ -48,7 +48,7 @@ export const BlogPostPage = () => {
         </Card>
       ))}
 
-      <Card className="border-emerald-400/30">
+      <Card className="bg-emerald-500/10">
         <h3 className="text-lg font-semibold">{post.cta.title}</h3>
         <p className="mt-2 text-sm text-slate-400">{post.cta.description}</p>
         <div className="mt-4 flex gap-2">

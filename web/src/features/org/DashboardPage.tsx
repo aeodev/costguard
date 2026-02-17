@@ -1,6 +1,5 @@
 import type { IntegrationSyncDiff, OrgOverview } from '@aicostguard/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { RefreshCw } from 'lucide-react';
 import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { useState } from 'react';
 import { useToast } from '../../app/providers/toast-provider';
@@ -79,7 +78,6 @@ export const DashboardPage = () => {
         }
         secondaryAction={
           <Button variant="secondary" onClick={() => void overviewQuery.refetch()}>
-            <RefreshCw size={14} className="mr-2" />
             Refresh
           </Button>
         }
@@ -116,18 +114,18 @@ export const DashboardPage = () => {
             <AreaChart data={data.spendSeries}>
               <defs>
                 <linearGradient id="spendFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#10b981" stopOpacity={0.45} />
-                  <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
+                  <stop offset="5%" stopColor="#2dd4bf" stopOpacity={0.55} />
+                  <stop offset="95%" stopColor="#2dd4bf" stopOpacity={0.02} />
                 </linearGradient>
               </defs>
-              <CartesianGrid strokeDasharray="3 3" stroke="#1e293b" />
+              <CartesianGrid strokeDasharray="3 3" stroke="#334155" />
               <XAxis dataKey="date" tick={{ fill: '#94a3b8', fontSize: 12 }} />
               <YAxis tick={{ fill: '#94a3b8', fontSize: 12 }} />
               <Tooltip
-                contentStyle={{ background: '#0f172a', border: '1px solid #334155' }}
+                contentStyle={{ background: 'rgba(15, 23, 42, 0.96)', border: '0', borderRadius: '12px', boxShadow: '0 16px 30px rgba(2, 6, 23, 0.42)' }}
                 formatter={(value: number) => formatCurrency(value)}
               />
-              <Area type="monotone" dataKey="amount" stroke="#34d399" fill="url(#spendFill)" strokeWidth={2} />
+              <Area type="monotone" dataKey="amount" stroke="#2dd4bf" fill="url(#spendFill)" strokeWidth={2} />
             </AreaChart>
           </ResponsiveContainer>
         </div>
@@ -188,10 +186,10 @@ export const DashboardPage = () => {
         <h2 className="text-lg font-semibold">Recommended actions</h2>
         <div className="mt-3 grid gap-3 md:grid-cols-3">
           {data.recommendedActions.map((action) => (
-            <div key={action.id} className="rounded-lg border border-slate-800 bg-slate-950/60 p-3">
+            <div key={action.id} className="rounded-lg bg-surface-soft/35 p-3 shadow-soft ">
               <p className="font-semibold text-slate-100">{action.title}</p>
-              <p className="mt-1 text-sm text-slate-400">{action.reason}</p>
-              <p className="mt-2 text-xs uppercase tracking-wide text-emerald-300">{action.cta}</p>
+              <p className="mt-1 text-sm text-slate-300">{action.reason}</p>
+              <p className="mt-2 text-xs uppercase tracking-wide text-brand">{action.cta}</p>
             </div>
           ))}
         </div>

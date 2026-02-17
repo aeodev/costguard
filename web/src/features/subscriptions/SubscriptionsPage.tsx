@@ -1,6 +1,5 @@
 import type { Subscription, Team, Tool, User } from '@aicostguard/shared';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
-import { Search } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { useToast } from '../../app/providers/toast-provider';
 import { queryKeys } from '../../shared/constants/query-keys';
@@ -133,15 +132,11 @@ export const SubscriptionsPage = () => {
         <div className="grid gap-3 md:grid-cols-5">
           <div className="md:col-span-2">
             <label className="mb-1 block text-xs uppercase tracking-wide text-slate-500">Search</label>
-            <div className="relative">
-              <Search size={14} className="pointer-events-none absolute left-3 top-2.5 text-slate-500" />
-              <Input
-                className="pl-8"
-                value={filters.q}
-                onChange={(event) => setFilters((current) => ({ ...current, q: event.target.value }))}
-                placeholder="Tool or user"
-              />
-            </div>
+            <Input
+              value={filters.q}
+              onChange={(event) => setFilters((current) => ({ ...current, q: event.target.value }))}
+              placeholder="Search by tool or user"
+            />
           </div>
           <div>
             <label className="mb-1 block text-xs uppercase tracking-wide text-slate-500">Tool</label>
